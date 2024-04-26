@@ -289,7 +289,7 @@ public class EditableExperiment : CoroutineExperiment
             expName == "CatFR6" || expName == "ICatFR6") {
 
             if (current_phase_type == "STIM") {
-                string stimTag = (string)words[wordsSeen]["stim_channels"];
+                string stimTag = words[wordsSeen]["stim_channels"].ToString();
                 elememInterface.SendStimSelectMessage(stimTag);
                 var stim_selection = new Dictionary<string, object> {
                     { "stim_channels", stimTag } };
