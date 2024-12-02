@@ -234,7 +234,7 @@ public class ElememInterfaceHelper : IHostPC
         dict.Add("accuracy", acc);
 
         //im.Do(new EventBase<string, Dictionary<string, object>>(im.ReportEvent, "latency check", dict));
-        scriptedEventReporter.ReportScriptedEvent("latency check", dict);
+        scriptedEventReporter.ReportOutOfThreadScriptedEvent("latency check", dict);
     }
 
     public override JObject WaitForMessage(string type, int timeout)
@@ -349,7 +349,7 @@ public class ElememInterfaceHelper : IHostPC
         messageDataDict.Add("message", message);
         messageDataDict.Add("sent", sent.ToString());
 
-        //scriptedEventReporter.ReportScriptedEvent("network", messageDataDict);
+        scriptedEventReporter.ReportOutOfThreadScriptedEvent("network", messageDataDict);
         //im.Do(new EventBase<string, Dictionary<string, object>, DateTime>(im.ReportEvent, "network", 
         //                        messageDataDict, System.DateTime.UtcNow));
 
