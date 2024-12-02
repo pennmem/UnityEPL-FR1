@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 1276841547}
   - component: {fileID: 1276841546}
   m_Layer: 0
-  m_Name: Syncbox
+  m_Name: SyncBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1041,12 +1041,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276841545}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9375e8de7a78643509ea8a8c004821b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c0a1ae7dac3e4eea88c9c293176e39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptedEventReporter: {fileID: 621434365}
+  scriptedInput: {fileID: 0}
 --- !u!4 &1276841547
 Transform:
   m_ObjectHideFlags: 0

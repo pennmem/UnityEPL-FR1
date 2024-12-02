@@ -24,6 +24,9 @@ public class EditableExperiment : CoroutineExperiment
     public GameObject pauseIndicator;
     public ScriptedEventReporter scriptedEventReporter;
     public VoiceActivityDetection VAD;
+#if !UNITY_WEBGL
+    private Syncbox syncs;
+#endif
 
     private bool paused = false;
     private string current_phase_type = "";
@@ -136,9 +139,21 @@ public class EditableExperiment : CoroutineExperiment
         if (currentSettings.useRamulator)
             yield return ramulatorInterface.BeginNewSession(session);
 
+#if !UNITY_WEBGL
         // Sys 1
-        if (!Config.noSyncbox && !currentSettings.useElemem && !currentSettings.useRamulator)
-            GameObject.Find("Syncbox").GetComponentInChildren<Syncbox>().enabled = true;
+        if (!Config.noSyncbox && !currentSettings.useElemem && !currentSettings.useRamulator) {
+            QualitySettings.vSyncCount = 1;
+            Application.targetFrameRate = 300;
+            // Start syncpulses
+            if (!Config.noSyncbox && !Config.freiburgSyncboxOn)
+            {
+                syncs = GameObject.Find("SyncBox").GetComponent<Syncbox>();
+                syncs.scriptedInput = scriptedEventReporter;
+                syncs.Init();
+                syncs.StartPulse();
+            }
+        }
+#endif
 
 
         // CPS

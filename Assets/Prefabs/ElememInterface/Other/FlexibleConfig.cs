@@ -22,6 +22,7 @@ public class Config
 
     // Hardware
     public static bool noSyncbox { get { return (bool)Config.GetSetting("noSyncbox"); } }
+    public static bool freiburgSyncboxOn { get { return (bool)Config.GetSetting("freiburgSyncboxOn"); } }
     public static bool noRamulator { get { return (bool)Config.GetSetting("noRamulator"); } }
     public static bool ps4Controller { get { return (bool)Config.GetSetting("ps4Contoller"); } }
 
